@@ -1,0 +1,83 @@
+{
+  "name": "react-mintworks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build src/index.html",
+    "check-all": "npm run type-check && npm run test && npm run build",
+    "dev": "concurrently -c yellow,magenta,cyan,green -n server,tests,types,story npm:dev-serve npm:dev-tests npm:dev-types npm:dev-stories --default-input-target=tests",
+    "dev-serve": "parcel src/index.html",
+    "dev-stories": "npm run storybook --quiet",
+    "dev-tests": "jest --watch -u",
+    "dev-types": "tsc --noEmit --watch --preserveWatchOutput",
+    "start": "npm run dev",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "test": "jest",
+    "type-check": "tsc --noEmit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "ramda": "^0.26.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-hyperscript-helpers": "^2.0.0",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.0",
+    "reselect": "^4.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-info": "^3.4.10",
+    "@storybook/addon-knobs": "^3.4.10",
+    "@storybook/addons": "^3.4.11",
+    "@storybook/react": "^3.4.10",
+    "@types/cheerio": "^0.22.10",
+    "@types/enzyme": "^3.1.13",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/jest": "^23.3.14",
+    "@types/ramda": "^0.25.50",
+    "@types/react": "^16.8.4",
+    "@types/react-dom": "^16.0.7",
+    "@types/react-hyperscript": "^3.0.3",
+    "@types/react-redux": "^6.0.13",
+    "@types/storybook__addon-actions": "^3.4.1",
+    "@types/storybook__addon-knobs": "^3.4.1",
+    "@types/storybook__react": "^3.0.9",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "6",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-runtime": "6",
+    "concurrently": "^4.0.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.6.0",
+    "jest-environment-jsdom": "^24.0.0",
+    "parcel-bundler": "^1.9.7",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.0.3",
+    "utility-types": "^2.1.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.ts",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
