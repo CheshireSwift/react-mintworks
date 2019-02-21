@@ -1,4 +1,4 @@
-import { configure } from "@storybook/react";
+import { configure, addDecorator } from "@storybook/react";
 
 function loadStories() {
   const req = require.context("../src/components", true, /\.stories\.ts$/);
