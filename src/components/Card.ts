@@ -1,7 +1,9 @@
-import { Fragment, ReactNode, ReactElement, ReactNodeArray } from 'react';
-import { div, h1, h, strong } from 'react-hyperscript-helpers';
+import { Fragment, ReactNode } from 'react';
+import { div, h1, h } from 'react-hyperscript-helpers';
 import * as R from 'ramda';
 import emoji from 'node-emoji';
+
+import renderEffect from './renderEffect';
 
 export enum CardType {
   Culture,
@@ -28,18 +30,6 @@ const typeConfig: { [T in CardType]: { icon: string; color: string } } = {
   [CardType.Deed]: { icon: 'scroll', color: 'paleturquoise' }
 };
 
-const Mint = (props: { size?: number; compact?: boolean }) =>
-  div(
-    {
-      style: {
-        fontSize: props.size,
-        display: 'inline-block',
-        letterSpacing: props.compact && props.size && -props.size * 0.6
-      }
-    },
-    emoji.get('white_circle')
-  );
-
 const TypeDisplay = (props: { type: CardType }) =>
   div(
     { style: { position: 'absolute', top: '1em', right: '1em' } },
@@ -53,29 +43,6 @@ const CostDisplay = (props: { cost: number }) =>
     },
     R.repeat(emoji.get('white_circle'), props.cost)
   );
-
-export function renderEffect(effect: ReactNode): ReactNodeArray {
-  if (typeof effect !== 'string') {
-    return [effect];
-  }
-
-  function insertMints(segment: string): ReactNode[] {
-    return R.intersperse<ReactElement | string>(
-      h(Mint, { size: 16 }),
-      segment.split('()')
-    );
-  }
-  const effectSpans = effect.split('*');
-  const effectSpansWithBolds = R.flatten(
-    R.addIndex<string, React.ReactNode>(R.map)(
-      (segment: string, index: number) =>
-        index % 2 ? [strong(insertMints(segment))] : insertMints(segment),
-      effectSpans
-    )
-  );
-
-  return effectSpansWithBolds;
-}
 
 const EffectDisplay = (props: { effect: ReactNode }) =>
   div(renderEffect(props.effect));
@@ -92,6 +59,19 @@ const CardFace = ({ name, type, cost, picture, effect, score }: CardConfig) =>
     h(EffectDisplay, { effect }),
     h(ScoreDisplay, { score })
   ]);
+
+const CardBack = () =>
+  div(
+    {
+      style: {
+        margin: 'auto',
+        fontSize: 192,
+        opacity: 0.7,
+        textShadow: '16px 8px gray'
+      }
+    },
+    emoji.get('white_circle')
+  );
 
 export const Card = ({ card }: CardProps) =>
   div(
@@ -110,7 +90,7 @@ export const Card = ({ card }: CardProps) =>
         position: 'relative'
       }
     },
-    [card && h(CardFace, card)]
+    [card ? h(CardFace, card) : h(CardBack)]
   );
 
 export default Card;

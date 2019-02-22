@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location component matches the builder snapshot 1`] = `
+<div
+  style="width:32rem;border-radius:4px;border:1px solid black;background-color:floralwhite;display:grid;grid-template-areas:\\"spaces name\\"
+        \\"spaces effect\\";grid-template-columns:5rem auto;grid-template-rows:4rem 8rem;grid-gap:1rem;text-align:center;padding:1rem;font-size:larger"
+>
+  <div
+    style="border-radius:4px;background-color:paleturquoise;grid-area:name"
+  >
+    <h1
+      style="margin:0.5rem"
+    >
+      Builder
+    </h1>
+  </div>
+  <div
+    style="border-radius:4px;background-color:paleturquoise;background:transparent;position:absolute;top:1.15rem;left:6.2rem;font-size:48px"
+  >
+    🏺
+  </div>
+  <div
+    style="border-radius:4px;background-color:paleturquoise;grid-area:effect;padding-top:1rem;position:relative"
+  >
+    <div>
+      Build one of your Plans
+    </div>
+  </div>
+  <div
+    style="border-radius:4px;background-color:paleturquoise;grid-area:spaces;display:flex;flex-direction:column;justify-content:space-around;text-transform:uppercase;font-weight:bold;font-size:24px"
+  >
+    <div
+      style="border:2px dashed floralwhite;border-radius:9999px;width:2.5rem;height:2.5rem;margin:auto;font-size:30px"
+    >
+      ⚪
+    </div>
+    <div
+      style="border:2px dashed floralwhite;border-radius:9999px;width:2.5rem;height:2.5rem;margin:auto;font-size:30px"
+    >
+      2
+    </div>
+    <div
+      style="border:2px dashed floralwhite;border-radius:9999px;width:2.5rem;height:2.5rem;margin:auto;font-size:30px"
+    >
+      2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Location component matches the lotto snapshot 1`] = `
+<div
+  style="width:32rem;border-radius:4px;border:1px solid black;background-color:floralwhite;display:grid;grid-template-areas:\\"spaces name\\"
+        \\"spaces effect\\";grid-template-columns:5rem auto;grid-template-rows:4rem 8rem;grid-gap:1rem;text-align:center;padding:1rem;font-size:larger"
+>
+  <div
+    style="border-radius:4px;background-color:paleturquoise;grid-area:name"
+  >
+    <h1
+      style="margin:0.5rem"
+    >
+      Wholesaler
+    </h1>
+  </div>
+  <div
+    style="border-radius:4px;background-color:paleturquoise;background:transparent;position:absolute;top:1.15rem;left:6.2rem;font-size:48px"
+  >
+    📜
+  </div>
+  <div
+    style="border-radius:4px;background-color:paleturquoise;grid-area:effect;padding-top:1rem;position:relative"
+  >
+    <div>
+      Gain ⚪⚪
+    </div>
+    <div
+      style="background-color:lightskyblue;position:absolute;bottom:0.3rem;left:0.3rem;right:0.3rem;padding:0.5em;border-radius:4px"
+    >
+      <div
+        style="position:absolute;right:0;bottom:2rem;background-color:lightskyblue;border-radius:4px;padding:0.25rem 1rem"
+      >
+        <strong>
+          Owner
+        </strong>
+      </div>
+      <div>
+        <strong>
+          Upkeep:
+        </strong>
+         If occupied, Gain ⚪
+      </div>
+    </div>
+  </div>
+  <div
+    style="border-radius:4px;background-color:paleturquoise;grid-area:spaces;display:flex;flex-direction:column;justify-content:space-around;text-transform:uppercase;font-weight:bold;font-size:24px"
+  >
+    Build deed to open
+  </div>
+</div>
+`;
