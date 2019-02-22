@@ -108,8 +108,7 @@ const cardStyle = {
   gridTemplateRows: '4rem 8rem',
   gridGap: '1rem',
   textAlign: 'center',
-  padding: '1rem',
-  fontSize: 'larger'
+  padding: '1rem'
 };
 
 export const Location = ({

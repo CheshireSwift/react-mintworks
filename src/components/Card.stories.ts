@@ -19,4 +19,38 @@ storiesOf('Card', module)
         type: select('Type', CardType, CardType.Production)
       }
     })
+  )
+  .add('Spread', () =>
+    h('div', { style: { display: 'flex' } }, [
+      h(Card, {
+        card: {
+          name: 'Mine',
+          cost: 2,
+          picture: emoji.get('pick'),
+          effect: '*Upkeep:* Gain ()',
+          score: 2,
+          type: CardType.Production
+        }
+      }),
+      h(Card, {
+        card: {
+          name: 'Gardens',
+          cost: 3,
+          picture: emoji.get('blossom'),
+          effect: '',
+          score: 3,
+          type: CardType.Culture
+        }
+      }),
+      h(Card, {
+        card: {
+          name: 'Crane',
+          cost: 2,
+          picture: emoji.get('building_construction'),
+          effect: 'You pay () less at the *Builder*',
+          score: 1,
+          type: CardType.Utility
+        }
+      })
+    ])
   );
