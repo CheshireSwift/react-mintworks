@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mint display matches the snapshot 1`] = `
+<span
+  style="font-size:larger"
+>
+  <span
+    style="margin-left:0"
+  >
+    🔴
+  </span>
+  <span
+    style="margin-left:-16px"
+  >
+    🔴
+  </span>
+  <span
+    style="margin-left:-16px"
+  >
+    🔴
+  </span>
+  <span
+    style="margin-left:-16px"
+  >
+    ⚪
+  </span>
+  16
+</span>
+`;
