@@ -3,31 +3,11 @@ import { div, h1, h } from 'react-hyperscript-helpers';
 import * as R from 'ramda';
 import emoji from 'node-emoji';
 
+import { CardConfig, CardType, typeConfig } from '../card';
 import renderEffect from './renderEffect';
 
-export enum CardType {
-  Culture,
-  Production,
-  Utility,
-  Deed
-}
-type CardConfig = {
-  name: string;
-  cost: number;
-  picture: string;
-  effect: React.ReactNode;
-  score: number;
-  type: CardType;
-};
 type CardProps = {
   card: null | CardConfig;
-};
-
-const typeConfig: { [T in CardType]: { icon: string; color: string } } = {
-  [CardType.Culture]: { icon: 'herb', color: 'yellowgreen' },
-  [CardType.Production]: { icon: 'gear', color: 'indianred' },
-  [CardType.Utility]: { icon: 'wrench', color: 'gold' },
-  [CardType.Deed]: { icon: 'scroll', color: 'paleturquoise' }
 };
 
 const TypeDisplay = (props: { type: CardType }) =>
@@ -56,8 +36,8 @@ const CostDisplay = (props: { cost: number }) =>
 const EffectDisplay = (props: { effect: ReactNode }) =>
   div({ style: { height: '2rem' } }, renderEffect(props.effect));
 
-const ScoreDisplay = (props: { score: number }) =>
-  div(R.repeat(emoji.get('star'), props.score));
+const ScoreDisplay = ({ score }: { score: number }) =>
+  div(R.repeat(emoji.get('star'), score));
 
 const CardFace = ({ name, type, cost, picture, effect, score }: CardConfig) =>
   h(Fragment, [

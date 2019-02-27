@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the neighborhood matches the snapshot 1`] = `
+<div
+  style="width:10rem;background-color:grey;padding:0.3rem;display:flex;flex-wrap:wrap;border:0.2rem dashed white"
+>
+  <div
+    style="text-align:center;background-color:indianred;width:4rem;height:4rem;padding:0.3rem;display:flex;flex-direction:column;justify-content:space-around;margin:0.25rem"
+  >
+    <div
+      style="font-size:24px"
+    >
+      ⛏️
+    </div>
+    <div
+      style="font-size:10px;word-break:break-all"
+    >
+      ⭐⭐
+    </div>
+  </div>
+</div>
+`;

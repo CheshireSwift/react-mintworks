@@ -2,7 +2,9 @@ import { render } from 'enzyme';
 import { h } from 'react-hyperscript-helpers';
 import emoji from 'node-emoji';
 
-import { Card, CardType } from './Card';
+import { CardType } from '../card';
+
+import { Card } from './Card';
 
 const mintIcon = emoji.get('white_circle');
 const starIcon = emoji.get('star');
@@ -12,7 +14,7 @@ describe('Card component', () => {
   const mineConfig = {
     name: 'Mine',
     cost: 2,
-    picture: '⛏️',
+    picture: emoji.get('pick'),
     effect: '*Upkeep:* Gain ()',
     score: 2,
     type: CardType.Production
